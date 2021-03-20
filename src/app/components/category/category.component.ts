@@ -11,6 +11,7 @@ export class CategoryComponent implements OnInit {
 
   categories : Category[] = [];
   currentCategory : Category;
+  defaultCategory : Boolean;
 
   constructor(private categoryService:CategoryService) { }
 
@@ -37,7 +38,7 @@ export class CategoryComponent implements OnInit {
   }
 
   getAllCategoryClass(){
-    if(!this.currentCategory){
+    if(this.defaultCategory == true){
       return "list-group-item active"
     }else{
       return "list-group-item"
